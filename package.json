@@ -1,6 +1,6 @@
 {
 	"name": "audio-extractor",
-	"homepage": "https://ddanielsantos.github.io/audio-extractor",
+	"homepage": "https://ddanielsantos.github.io/audio-extractor/",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
