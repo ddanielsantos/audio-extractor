@@ -1,5 +1,6 @@
 {
 	"name": "audio-extractor",
+	"homepage": "https://ddanielsantos.github.io/audio-extractor",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
@@ -7,7 +8,9 @@
 		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"format": "biome check --write .",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"predeploy": "yarn build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"@ffmpeg/ffmpeg": "^0.12.15",
@@ -20,6 +23,7 @@
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
 		"@vitejs/plugin-react": "^4.3.4",
+		"gh-pages": "^6.3.0",
 		"globals": "^15.15.0",
 		"typescript": "~5.7.2",
 		"typescript-eslint": "^8.24.1",
