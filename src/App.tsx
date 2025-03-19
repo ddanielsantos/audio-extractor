@@ -11,7 +11,12 @@ function App() {
 	const [extracting, setExtracting] = useState(false);
 	const [audioUrl, setAudioUrl] = useState<string | null>(null);
 
-  const loadFFmpeg = async () => {
+	/**
+	 * Loads FFmpeg and its necessary files.
+	 *
+	 * @returns {Promise<void>} A promise that resolves when FFmpeg is loaded.
+	 */
+  const loadFFmpeg = async (): Promise<void> => {
     const coreUrl = "https://unpkg.com/@ffmpeg/core@0.12.6/dist/esm";
     const ffmpeg = ffmpegRef.current;
     await ffmpeg.load({
@@ -30,7 +35,13 @@ function App() {
     });
   };
 
-  const extractWithFFmpeg = async (videoUrl: string) => {
+	/**
+	 * Extracts audio from a video file using FFmpeg.
+	 *
+	 * @param {string} videoUrl - The URL of the video file to extract audio from.
+	 * @returns {Promise<Blob>} A promise that resolves to a Blob containing the extracted audio.
+	 */
+  const extractWithFFmpeg = async (videoUrl: string): Promise<Blob> => {
     const ffmpeg = ffmpegRef.current;
     const inputFile = "input.mp4";
     const outputFile = "output.aac";
