@@ -60,8 +60,8 @@ function App() {
 		}
 
 		// mp3 and aac streams can be copied directly without re-encoding
-		const outputFile = codec === "mp3" ? "output.mp3" : "output.aac";
-		const type = codec === "mp3" ? "audio/mpeg" : "audio/aac";
+		const outputFile = codec === "mp3" ? "output.mp3" : "output.mp4";
+		const type = "audio/mpeg";
 		let ffmpegLogs = "";
 		ffmpeg.on("log", ({ message }) => ffmpegLogs += `${message}\n`);
 		if (["aac", "mp3"].includes(codec)) {
